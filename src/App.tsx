@@ -8,7 +8,12 @@ function App() {
         theme={{
           token: {
             colorPrimary: '#202123',
-            colorBgContainer: '#565869'
+            colorBgContainer: '#343541'
+          },
+          components: {
+            Menu: {
+              itemActiveBg: '#202123'
+            }
           }
         }}
       >

@@ -1,11 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom'
-import Layout from '@/views/chat/layout'
+import { constantRoute } from './routes'
 
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <Layout />
-  }
-])
+const router = createBrowserRouter(constantRoute)
 
 export default router
