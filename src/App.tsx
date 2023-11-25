@@ -12,7 +12,8 @@ function App() {
           },
           components: {
             Menu: {
-              itemActiveBg: '#202123'
+              darkItemSelectedBg: '#202123',
+              darkItemHoverBg: '#202123'
             }
           }
         }}

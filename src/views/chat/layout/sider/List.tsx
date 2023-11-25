@@ -1,13 +1,21 @@
 import { Menu, MenuProps } from 'antd'
 import { observer } from 'mobx-react-lite'
 import { items } from './model'
-import './css/index.css'
 import { useLocation, useNavigate } from 'react-router-dom'
+import { useEffect, useState } from 'react'
 const List: React.FC = observer(() => {
   const location = useLocation()
   const navigate = useNavigate()
+  const [current, setCurrent] = useState<string>(location.state)
+  useEffect(() => {
+    setCurrent(location.state)
+  }, [location.state])
   const onClick: MenuProps['onClick'] = (e) => {
-    navigate(`/chat/${e.key}`)
+    setCurrent(e.key)
+
+    navigate(`/chat/${e.key}`, {
+      state: e.key
+    })
   }
   return (
     <>
@@ -15,7 +23,8 @@ const List: React.FC = observer(() => {
         onClick={onClick}
         theme="dark"
         mode="inline"
-        defaultSelectedKeys={[location.state]}
+        defaultSelectedKeys={[current]}
+        selectedKeys={[current]}
         items={items.get()}
         className="px-[10px] mt-[20px] bg-black"
       />

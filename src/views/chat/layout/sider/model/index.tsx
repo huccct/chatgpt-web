@@ -32,6 +32,5 @@ export const handleAddChat = (
 ) => {
   runInAction(() => {
     items.set([...items.get(), item])
-    console.log(items.get())
   })
 }

@@ -8,6 +8,7 @@ import { observer } from 'mobx-react-lite'
 import { getItem, handleAddChat } from './sider/model'
 import { useNavigate } from 'react-router-dom'
 import { nanoid } from 'nanoid'
+import { changeMessages, changeMessagesId } from './content/model'
 const { Sider, Content } = Layout
 
 export interface MessageType {
@@ -47,6 +48,7 @@ const Index: React.FC = observer(() => {
             onClick={() => {
               const id = nanoid()
               handleAddChat(getItem('New Chat', id, <MessageOutlined />))
+              changeMessagesId(id)
               // navigate to chat page
               navigate('/chat/' + id, {
                 state: id

@@ -1,10 +1,22 @@
-import { SendOutlined } from '@ant-design/icons'
+import { MessageOutlined, SendOutlined } from '@ant-design/icons'
 import { Button, Col, Input, Row } from 'antd'
 import { observer } from 'mobx-react-lite'
+import { nanoid } from 'nanoid'
 import React from 'react'
-import { changeInputValue, changeMessages, inputValue, messages } from './model'
+import { useLocation, useNavigate } from 'react-router-dom'
+import { getItem, handleAddChat } from '../sider/model'
+import {
+  changeInputValue,
+  changeMessages,
+  changeMessagesId,
+  inputValue,
+  messages,
+  messagesId
+} from './model'
 const { TextArea } = Input
 const MessageInput: React.FC = observer(() => {
+  const navigate = useNavigate()
+  const location = useLocation()
   const handleInputChange = (event: any) => {
     changeInputValue(event.target.value)
   }
@@ -19,9 +31,19 @@ const MessageInput: React.FC = observer(() => {
         nickname: 'You'
       }
 
+      if (location.state === messagesId.get()) {
+        console.log('right')
+      } else {
+        const id = nanoid()
+
+        handleAddChat(getItem(inputValue.get(), id, <MessageOutlined />))
+        changeMessagesId(id)
+        navigate(`/chat/${id}`, {
+          state: id
+        })
+      }
       changeMessages(userMessage)
       changeInputValue('')
-
       // 模拟回复
       setTimeout(() => {
         const botMessage = {
