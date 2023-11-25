@@ -38,7 +38,7 @@ const MessageInput: React.FC = observer(() => {
 
         handleAddChat(getItem(inputValue.get(), id, <MessageOutlined />))
         changeMessagesId(id)
-        navigate(`/chat/${id}`, {
+        navigate(`/generate/chat/${id}`, {
           state: id
         })
       }

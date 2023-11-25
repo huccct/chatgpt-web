@@ -13,7 +13,7 @@ const List: React.FC = observer(() => {
   const onClick: MenuProps['onClick'] = (e) => {
     setCurrent(e.key)
 
-    navigate(`/chat/${e.key}`, {
+    navigate(`/generate/chat/${e.key}`, {
       state: e.key
     })
   }

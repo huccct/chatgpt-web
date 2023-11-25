@@ -2,13 +2,14 @@ import { MessageOutlined, PlusOutlined } from '@ant-design/icons'
 import { Button, Layout, Row, theme } from 'antd'
 import React from 'react'
 
-import MessageContent from './content'
-import List from './sider/List'
 import { observer } from 'mobx-react-lite'
-import { getItem, handleAddChat } from './sider/model'
-import { useNavigate } from 'react-router-dom'
 import { nanoid } from 'nanoid'
-import { changeMessages, changeMessagesId } from './content/model'
+import { useNavigate } from 'react-router-dom'
+import MessageContent from './content'
+import { changeMessagesId } from './content/model'
+import List from './sider/List'
+import { getItem, handleAddChat } from './sider/model'
+import Footer from './sider/Footer'
 const { Sider, Content } = Layout
 
 export interface MessageType {
@@ -19,7 +20,7 @@ export interface MessageType {
   nickname: string
 }
 
-const Index: React.FC = observer(() => {
+const index: React.FC = observer(() => {
   const {
     token: { colorBgContainer }
   } = theme.useToken()
@@ -50,7 +51,7 @@ const Index: React.FC = observer(() => {
               handleAddChat(getItem('New Chat', id, <MessageOutlined />))
               changeMessagesId(id)
               // navigate to chat page
-              navigate('/chat/' + id, {
+              navigate('/generate/chat/' + id, {
                 state: id
               })
             }}
@@ -58,6 +59,7 @@ const Index: React.FC = observer(() => {
             {<span className="text-white">新的聊天</span>}
           </Button>
           <List />
+          <Footer />
         </Row>
       </Sider>
       <Layout style={{ marginLeft: 260 }}>
@@ -76,4 +78,4 @@ const Index: React.FC = observer(() => {
   )
 })
 
-export default Index
+export default index

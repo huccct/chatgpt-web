@@ -1,13 +1,18 @@
-import Layout from '@/views/chat/layout'
+import ChatLayout from '@/views/chat/layout'
+import HomeLayout from '@/views/home/layout'
 import MessageList from '@/views/chat/layout/content/message-list'
 
 export const constantRoute = [
   {
     path: '/',
-    element: <Layout />,
+    element: <HomeLayout />
+  },
+  {
+    path: '/generate',
+    element: <ChatLayout />,
     children: [
       {
-        path: '/chat/:id',
+        path: 'chat/:id',
         element: <MessageList />
       }
     ]
