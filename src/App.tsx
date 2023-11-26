@@ -14,6 +14,11 @@ function App() {
             Menu: {
               darkItemSelectedBg: '#202123',
               darkItemHoverBg: '#202123'
+            },
+            Input: {
+              activeBorderColor: '#fff',
+              hoverBg: '#fff',
+              hoverBorderColor: '#fff'
             }
           }
         }}

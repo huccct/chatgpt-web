@@ -41,7 +41,7 @@ const Footer: React.FC = observer(() => {
       >
         <div className="flex items-center px-[15px]">
           {/* avatar */}
-          <div className="w-[40px] h-[40px] rounded-full bg-white"></div>
+          <div className="w-[35px] h-[35px] rounded-full bg-white"></div>
           {/* username */}
 
           <Button className="ml-[5px] border-none">
