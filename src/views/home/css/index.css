@@ -1,7 +1,25 @@
-.ant-input {
+.ant-input,
+.ant-input-affix-wrapper {
   background-color: #fff;
 }
 
-.ant-input-affix-wrapper {
-  background-color: #fff;
+.normal,
+.normal:hover,
+.highlight {
+  width: 70px;
+  height: 70px;
+  cursor: pointer;
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  text-align: center;
+}
+
+.normal:hover,
+.highlight {
+  background: #ccc;
 }

@@ -1,6 +1,6 @@
-import { createBrowserRouter } from 'react-router-dom'
+import { createHashRouter } from 'react-router-dom'
 import { constantRoute } from './routes'
 
-const router = createBrowserRouter(constantRoute)
+const router = createHashRouter(constantRoute)
 
 export default router

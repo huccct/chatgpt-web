@@ -7,7 +7,7 @@ const index: React.FC = observer(() => {
       className="w-[400px] h-[400px] bg-[#ccc] flex items-center
     justify-center mx-auto"
     >
-      generation
+      models
     </div>
   )
 })

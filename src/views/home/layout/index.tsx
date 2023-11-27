@@ -1,7 +1,7 @@
-import React from 'react'
 import { observer } from 'mobx-react-lite'
+import React from 'react'
+import { Outlet } from 'react-router-dom'
 import Header from '../components/Header'
-import WaterFall from '../components/WaterFall'
 import SideBar from '../components/SiderBar'
 
 const index: React.FC = observer(() => {
@@ -9,7 +9,7 @@ const index: React.FC = observer(() => {
     <>
       <Header />
       <SideBar />
-      <WaterFall />
+      <Outlet />
     </>
   )
 })
