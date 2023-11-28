@@ -1,8 +1,8 @@
-import React from 'react'
+import { CommentOutlined, LikeOutlined, StarOutlined } from '@ant-design/icons'
+import { Avatar, Card, FloatButton } from 'antd'
 import { observer } from 'mobx-react-lite'
-import { Card, FloatButton } from 'antd'
+import React from 'react'
 import { waterfallList } from './model'
-import '../../css/index.css'
 
 const { Meta } = Card
 
@@ -10,7 +10,7 @@ const index: React.FC = observer(() => {
   return (
     <>
       <div
-        className="px-[150px] py-[80px]"
+        className="pl-[160px] pr-[100px] py-[80px]"
         style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(4, 1fr)',
@@ -29,8 +29,28 @@ const index: React.FC = observer(() => {
                   src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
                 />
               }
+              actions={[
+                <LikeOutlined
+                  key="like"
+                  style={{ color: '#fff', fontSize: '16px' }}
+                />,
+                <CommentOutlined
+                  key="comment"
+                  style={{ color: '#fff', fontSize: '16px' }}
+                />,
+                <StarOutlined
+                  key="collect"
+                  style={{ color: '#fff', fontSize: '16px' }}
+                />
+              ]}
             >
-              <Meta title={item.title} description={item.desc} />
+              <Meta
+                avatar={
+                  <Avatar src="https://xsgames.co/randomusers/avatar.php?g=pixel" />
+                }
+                title={<span className="text-white">{item.title}</span>}
+                description={<span className="text-white">{item.desc}</span>}
+              />
             </Card>
           )
         })}

@@ -19,6 +19,9 @@ function App() {
               activeBorderColor: '#fff',
               hoverBg: '#fff',
               hoverBorderColor: '#fff'
+            },
+            Card: {
+              actionsBg: '#1a1b1e'
             }
           }
         }}
