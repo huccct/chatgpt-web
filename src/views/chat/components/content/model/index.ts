@@ -1,5 +1,5 @@
 import { observable, runInAction } from 'mobx'
-import { MessageType } from '../..'
+import { MessageType } from '../../../layout'
 
 export const inputValue = observable.box<string>('')
 

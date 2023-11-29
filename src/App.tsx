@@ -6,11 +6,12 @@ function App() {
     <>
       <ConfigProvider
         theme={{
-          token: {
-            colorPrimary: '#202123',
-            colorBgContainer: '#343541'
-          },
           components: {
+            Button: {
+              defaultBg: '#202123',
+              colorPrimaryHover: 'none',
+              colorPrimaryActive: 'none'
+            },
             Menu: {
               darkItemSelectedBg: '#202123',
               darkItemHoverBg: '#202123'
@@ -18,7 +19,7 @@ function App() {
             Input: {
               activeBorderColor: '#fff',
               hoverBg: '#fff',
-              hoverBorderColor: '#fff'
+              hoverBorderColor: 'none'
             },
             Card: {
               actionsBg: '#1a1b1e'

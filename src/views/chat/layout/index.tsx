@@ -5,11 +5,11 @@ import React from 'react'
 import { observer } from 'mobx-react-lite'
 import { nanoid } from 'nanoid'
 import { useNavigate } from 'react-router-dom'
-import MessageContent from './content'
-import { changeMessagesId } from './content/model'
-import List from './sider/List'
-import { getItem, handleAddChat } from './sider/model'
-import Footer from './sider/Footer'
+import MessageContent from '../components/content'
+import { changeMessagesId } from '../components/content/model'
+import List from '../components/sider/List'
+import { getItem, handleAddChat } from '../components/sider/model'
+import Footer from '../components/sider/Footer'
 const { Sider, Content } = Layout
 
 export interface MessageType {
@@ -21,9 +21,6 @@ export interface MessageType {
 }
 
 const index: React.FC = observer(() => {
-  const {
-    token: { colorBgContainer }
-  } = theme.useToken()
   const navigate = useNavigate()
   return (
     <Layout>
@@ -67,7 +64,7 @@ const index: React.FC = observer(() => {
           style={{
             minHeight: '90vh',
             height: '90%',
-            background: colorBgContainer
+            background: '#343541'
             // paddingTop: 56
           }}
         >

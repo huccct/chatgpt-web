@@ -1,7 +1,7 @@
 import { observer } from 'mobx-react-lite'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { MessageType } from '..'
+import { MessageType } from '../../layout'
 import { initMessages, messageStore } from './model'
 
 const MessageList: React.FC = observer(() => {

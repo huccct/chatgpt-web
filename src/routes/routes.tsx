@@ -1,6 +1,6 @@
 import ChatLayout from '@/views/chat/layout'
 import HomeLayout from '@/views/home/layout'
-import MessageList from '@/views/chat/layout/content/message-list'
+import MessageList from '@/views/chat/components/content/message-list'
 import WaterFallList from '@/views/home/components/WaterFall'
 import GenerationLayout from '@/views/generation/layout'
 import RankingLayout from '@/views/ranking/layout'
